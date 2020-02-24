@@ -24,11 +24,12 @@ public class turretLookAtEnemy : MonoBehaviour
     void Update()
     {
         this.transform.LookAt(pigeon.transform.position + (pigeon.velocity * leadAmount));
+        Debug.DrawRay(bulletSpawn.transform.position, bulletSpawn.forward * 100, Color.red);
     }
 
     IEnumerator Fire(){
         while(true){
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.3f);
             Rigidbody bullet = Instantiate(bulletPreFab, bulletSpawn.position,bulletSpawn.rotation);
             bullet.AddRelativeForce(Vector3.forward * 50, ForceMode.Impulse);
         }

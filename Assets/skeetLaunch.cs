@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class skeetLaunch : MonoBehaviour
 {
-    public int rDir = 50;
+    public int rDir = 15;
     public turretLookAtEnemy refTurret;
     // Start is called before the first frame update
     void Start()
@@ -31,7 +31,7 @@ public class skeetLaunch : MonoBehaviour
         pigeon.GetComponent<Renderer>().material.color = Random.ColorHSV();
         pigeon.transform.position = this.transform.position;
         pigeon.transform.Rotate(Random.Range(-rDir,rDir), Random.Range(-rDir,rDir), Random.Range(-rDir,rDir));
-        rb.AddRelativeForce(pigeon.transform.up * 50, ForceMode.Impulse);
+        rb.AddRelativeForce(pigeon.transform.up * 10, ForceMode.Impulse);
         refTurret.pigeon = rb;
     }
 }
