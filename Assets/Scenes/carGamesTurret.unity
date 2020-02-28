@@ -4898,7 +4898,7 @@ MonoBehaviour:
   gate1: {fileID: 586813827}
   gate2: {fileID: 200774053}
   gate3: {fileID: 1891135317}
-  keyText: {fileID: 458052184}
+  keyText: {fileID: 0}
 --- !u!1 &1180085558
 GameObject:
   m_ObjectHideFlags: 0
@@ -6032,6 +6032,7 @@ MonoBehaviour:
   playerRef: {fileID: 1876026647}
   debugText: {fileID: 1297310914}
   keyCountRef: {fileID: 1148380584}
+  startPos: {fileID: 0}
   checkPoint1: {fileID: 698141710}
   checkPoint2: {fileID: 574451778}
   checkPoint3: {fileID: 1000563651}
@@ -7173,7 +7174,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1876026641}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bebed2a1e57156499ac2b194fb5441a, type: 3}
   m_Name: 

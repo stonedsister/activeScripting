@@ -21,7 +21,7 @@ public class skeetLaunch : MonoBehaviour
     IEnumerator Launch(){
         while(true){
             Fire();
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1.5f);
         }
     }
 
@@ -32,6 +32,6 @@ public class skeetLaunch : MonoBehaviour
         pigeon.transform.position = this.transform.position;
         pigeon.transform.Rotate(Random.Range(-rDir,rDir), Random.Range(-rDir,rDir), Random.Range(-rDir,rDir));
         rb.AddRelativeForce(pigeon.transform.up * 10, ForceMode.Impulse);
-        refTurret.pigeon = rb;
+        //refTurret.pigeon = rb;
     }
 }

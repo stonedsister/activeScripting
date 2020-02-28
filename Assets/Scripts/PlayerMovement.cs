@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,11 +13,25 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody rb;
     private bool isGrounded;
+    public int playerHealth;
+    public TextMeshPro playerHealthTxt;
 
 
     void Start(){
         rb = this.GetComponent<Rigidbody>();
         isGrounded = true;
+        playerHealth = 100;
+    }
+
+
+    void Update(){
+        if(playerHealth <= 0){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        playerHealthTxt.text = $"Health -> {playerHealth}";
+
+        
     }
     public void move(float h, float v){
         if(isGrounded){
@@ -34,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+
     void OnTriggerStay(Collider other){
         if(other.gameObject.CompareTag("ground")){
             isGrounded = true;
@@ -44,11 +60,25 @@ public class PlayerMovement : MonoBehaviour
         if(other.gameObject.CompareTag("restart")){
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+
+        /*if(other.gameObject.CompareTag("bullet")){
+            playerHealth -= 10;
+            Destroy(other.gameObject);
+            Debug.Log(playerHealth);
+        }*/
     }
 
     void OnTriggerExit(Collider other){
         if(other.gameObject.CompareTag("ground")){
             isGrounded = false;
+        }
+    }
+    
+    void OnCollisionEnter(Collision other){
+        if(other.gameObject.CompareTag("bullet")){
+            playerHealth -= 10;
+            Destroy(other.gameObject);
+            Debug.Log(playerHealth);
         }
     }
 }
