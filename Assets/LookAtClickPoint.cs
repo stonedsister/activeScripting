@@ -20,7 +20,7 @@ public class LookAtClickPoint : MonoBehaviour
         StartCoroutine(LookAtMousePoint());
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if(Input.GetMouseButtonDown(0)){
@@ -28,16 +28,15 @@ public class LookAtClickPoint : MonoBehaviour
             Debug.DrawRay(bulletSpawn.transform.position, transform.TransformDirection(Vector3.forward) * 10, Color.magenta, 1f);
             Shoot();   
         }
-
-        
     }
 
-   
 
     void Shoot(){
         Rigidbody bullet = Instantiate(bulletPreFab, bulletSpawn.position, bulletSpawn.rotation);
+        Debug.Log("Instantiating");
         bullet.AddRelativeForce(Vector3.forward * bulletSpeed, ForceMode.Impulse);
     }
+
 
     IEnumerator LookAtMousePoint(){
         while(true){

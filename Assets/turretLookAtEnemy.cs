@@ -11,7 +11,6 @@ public class turretLookAtEnemy : MonoBehaviour
     public Transform origin;
     //public Rigidbody pigeon;
     public Rigidbody player;
-    public GameObject block;
     [Range(0,1)]
     public float leadAmount = .5f;
     public int turretHealth;
@@ -41,12 +40,14 @@ public class turretLookAtEnemy : MonoBehaviour
             yield return new WaitForSeconds(2.0f);
             Rigidbody bullet = Instantiate(bulletPreFab, bulletSpawn.position,bulletSpawn.rotation);
             bullet.AddRelativeForce(Vector3.forward * 50, ForceMode.Impulse);
+            
         }
     }
 
     void OnCollisionEnter(Collision other){
         if(other.gameObject.CompareTag("playerBullet")){
             turretHealth -= 10;
+            Destroy(other.gameObject);
         }
     }
 }

@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
     public int playerHealth;
     public TextMeshPro playerHealthTxt;
+    public bool rampGrounded;
 
 
     void Start(){
@@ -72,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
         if(other.gameObject.CompareTag("ground")){
             isGrounded = false;
         }
+
     }
     
     void OnCollisionEnter(Collision other){

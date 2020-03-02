@@ -20,9 +20,10 @@ public class DestroyBullet : MonoBehaviour
         
     }
 
+    /*void OnCollisionEnter(Collision other){
+        if(other.gameObject != gameObject.CompareTag("smartTurret") || other.gameObject != gameObject.CompareTag("Player")){
+            Destroy(this.gameObject);
+        }
 
-
-    void WaitAndDestroy(){
-        //Destroy(this.GameObject, 5f);
-    }
+    }*/
 }

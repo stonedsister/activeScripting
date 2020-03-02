@@ -39,14 +39,16 @@ public class Debugger : MonoBehaviour
         debugPanel.SetActive(false);
     }
 
+    /*
     public void InputText(string input){
         if(input == "reload scene"){
-            Application.LoadLevel(1);
+            //Application.LoadLevel(1);
+            SceneManager.LoadScene(1);
         }
         if(input == "hello"){
             debugText.text = "Hell o.";
         }
-    }
+    }*/
 
     public void changeKey(string input){
         Debug.Log($"Key count -> {keyCountRef.keyCount}");
