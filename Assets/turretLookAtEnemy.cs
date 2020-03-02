@@ -51,6 +51,4 @@ public class turretLookAtEnemy : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
-
-    
 }
