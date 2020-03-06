@@ -16,6 +16,7 @@ TagManager:
   - playerBullet
   - smartTurret
   - Ramp
+  - health
   layers:
   - Default
   - TransparentFX

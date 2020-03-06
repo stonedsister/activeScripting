@@ -32,6 +32,11 @@ public class PlayerMovement : MonoBehaviour
 
         playerHealthTxt.text = $"Health -> {playerHealth}";
 
+        if(isGrounded){
+            Debug.Log("grounded");
+        } else{
+            Debug.Log("NOT");
+        }
         
     }
     public void move(float h, float v){
@@ -43,9 +48,14 @@ public class PlayerMovement : MonoBehaviour
             rb.AddRelativeTorque(0,h * rotSpeed,0);
             rb.drag = chosenDrag;
         }
+        else if(rampGrounded){
+            rb.AddRelativeForce(0,0,(v * speed) * 5);
+            rb.AddRelativeTorque(0,h * rotSpeed,0);
+            rb.drag = chosenDrag;
+        }
 
         else{
-            rb.AddRelativeForce(0,0,v);
+            rb.AddRelativeForce(0,0,v * 2);
         }
         
     }
@@ -54,6 +64,10 @@ public class PlayerMovement : MonoBehaviour
     void OnTriggerStay(Collider other){
         if(other.gameObject.CompareTag("ground")){
             isGrounded = true;
+            rampGrounded = false;
+        }else if(other.gameObject.CompareTag("Ramp")){
+            isGrounded = false;
+            rampGrounded = true;
         }
     }
 
@@ -66,6 +80,9 @@ public class PlayerMovement : MonoBehaviour
     void OnTriggerExit(Collider other){
         if(other.gameObject.CompareTag("ground")){
             isGrounded = false;
+        }
+        else if(other.gameObject.CompareTag("Ramp")){
+            rampGrounded = false;
         }
 
     }

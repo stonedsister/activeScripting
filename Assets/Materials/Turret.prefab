@@ -91,7 +91,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 86071343b60a84b41aee4831b2ab5719, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -118,7 +118,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 493507173515398318}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e7e699bf279a25f458c7e55231c606aa, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -137,6 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interval: 0.1
+  mainCam: {fileID: 0}
   bulletSpawn: {fileID: 493507172914080220}
   bulletPreFab: {fileID: 1920966629826031295, guid: aaaea6fdfb9a1d24583e76172b60c8ee,
     type: 3}
