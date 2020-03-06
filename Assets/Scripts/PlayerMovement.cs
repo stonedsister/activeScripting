@@ -75,6 +75,11 @@ public class PlayerMovement : MonoBehaviour
         if(other.gameObject.CompareTag("restart")){
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+
+        if(other.gameObject.CompareTag("health")){
+            playerHealth += 10;
+            Destroy(other.gameObject);
+        }
     }
 
     void OnTriggerExit(Collider other){
